@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <title>
+    Object model 
+  </title>
+  <body>
+
+    <script>
+          const product = {
+            name : 'socks' ,
+            price : '1090',
+            'delivery-time': '1-day',
+
+            rating: { // this is known as nested object 
+              stars : 4, 
+              count : 70
+            },
+            comments : {
+              commentCount : 17,
+              valueableComments : 5
+            },
+            fun: function function1() { // function inside an objext
+              console.log('this is a function inside object');
+            }
+          };
+          // console.log(product)
+          // console.log(product.name); 
+          // here the syntax for the object is to  property : pair , --> this is the way to declare it and to edit any property name 
+          // we can simply modifty by using the with the .name of the element
+          //bracket property  lets us use properties that dont work with dot notation
+          // Function inside an object is called as method
+          product.name = 'woolen socks';
+          console.log(product);
+          console.log(product.price) // to print nay specific element
+          console.log (product['delivery-time']);
+          console.log(product.rating.count);
+          console.log(product.comments.valueableComments);
+          product.fun() // calling of a function
+          console.log(typeof console); // it comes as object
+          console.log(typeof console.log); // it comes as function
+
+          // The 2 built in objects of JS are :
+          //1) JSON ;-JavaScript Object Notation and 2)LocalStorage
+          /*
+          JSON - Javascript Oject notation
+          - A syntax
+          - Similar to javascript object
+          - but has less features
+         
+         
+          !!!! in json we can use only double quote 
+          function cannot be used in json. 
+          Its Similar to js object syntax
+
+          When to use Json ?: When we want to send data between computers.
+          When we want to store data.
+
+          Built -in Json Object:
+          Convert: javascript Objext  -> JSON
+
+          console.log(JSON.stringify(product)) // Now this will convert the object into the json , stringify is a method
+
+
+          */
+
+          console.log( JSON.stringify(product)) //ab isme dekha gaya tho they json file havent print the function
+          // its because it does not take the func in it while converting ) and everything is converted into a string.
+
+          //Convert back to JS Obeject we can use the :
+          const jsonString = JSON.stringify(product)
+          console.log(JSON.parse(jsonString))
+
+// ---------------------------------------------------------------------
+//Next Built in Object is LocalStorage:
+/* It save Values more permanently.
+ 
+
+    </script>
+  </body>
+</html>
