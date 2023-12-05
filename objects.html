@@ -73,7 +73,51 @@
 // ---------------------------------------------------------------------
 //Next Built in Object is LocalStorage:
 /* It save Values more permanently.
- 
+
+Null vs undefined :
+null = intentionally want something to be empty and undefined both are kind of same.
+
+AUTO Boxing :
+Object has also other properties and methods:
+*/
+console.log('hello'.length) // this gives the string length 
+console.log('hello'.toUpperCase()) // this makes the string to the upper case.
+
+//Objects are References: VVIMP
+
+const object1 = {
+  message : 'hello ' //this stores the object in a refernce
+}
+const object2 = object1; // this wont copy the content but will only copy the reference of the file where it lies which makes it easier to locate.
+
+object1.message = 'Good job'; // so even if we are using const we can still change the value of the object.
+console.log(object1);
+console.log(object2);
+
+const object3 ={
+  message : 'hello'
+}
+
+console.log(object3 === object1); // we have copied the same code of object1 in 3 but their arent same because there references are different.
+console.log(object2 === object1);  // this is because it has same references and both are stored in same computer memory
+
+
+// objects : we are comparing the references and not the values inside
+
+//Destructing Shortcut method (easier way to take properties out of an object )
+const object4 ={
+  message : 'hello',
+  sale : 21
+}
+const {message , sale} = object4
+console.log(message, sale);
+
+// Shorthand shortcut method.
+const object5 ={
+  message : message, // yeh basically jo pehele stored hai uske basics pe vo reference lekar uska op deta hain.
+  sale : sale
+}
+console.log(object5);
 
     </script>
   </body>
