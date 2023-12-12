@@ -1,0 +1,43 @@
+<!--DOM -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM with Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+  <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+      <div class="day">Friday</div>
+  </div>
+</body>
+<script>
+  const parent = document.querySelector('.parent')
+  console.log(parent);
+  console.log(parent.children);
+  console.log(parent.children[1]);
+  console.log(parent.children[1].innerHTML);
+
+  for (let index = 0; index < parent.children.length; index++) {
+    console.log(parent.children[index].innerHTML);
+    
+  }
+  parent.children[1].style.color = 'orange' // this will make the class parent index1 ke element ko color orange
+  console.log(parent.firstElementChild); // this will return the class parent ke first element 
+  console.log(parent.lastElementChild); // this will return the class parent ke last element 
+
+  const dayOne = document.querySelector('.day')
+  console.log(dayOne);
+  console.log(dayOne.parentElement);//yeh pura parent element div ko display karta hain
+  console.log(dayOne.nextElementSibling); // this will give the next element after the first div element i.e tuesday
+
+
+  console.log("NODES: ", parent.childNodes); 
+
+</script>
+</html>
