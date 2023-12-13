@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Practice</title>
+</head>
+<body style="background-color: #212121; color: white;">
+  <ul class="language">
+    <li> Javascript</li>
+  </ul>
+</body>
+<script>
+  //adding a new text one option
+  function addLanguage(langName){ 
+    const li = document.createElement('li')
+    li.innerHTML = `${langName}`
+    document.querySelector('.language').appendChild(li)
+  
+  }
+  addLanguage("python")
+  addLanguage("typescript")
+
+  // adding the text second option
+
+  function addOptilang(langName) {
+   const li = document.createElement('li')
+  //  const addText = document.createTextNode(`${langName}`)
+  //  li.appendChild(addtext)
+  li.appendChild(document.createTextNode(langName))
+  document.querySelector('.language').appendChild(li)
+  }
+  addOptilang("java")
+
+  //edit first option (1st approach)
+  const secondLang = document.querySelector("li:nth-child(2)")
+  // secondLang.innerHTML = " Mojo" // can add the text either way 
+  const newli = document.createElement('li') // for creating a new element 
+  newli.textContent = "Mojo" // or this way 
+  secondLang.replaceWith(newli) // this will replace it with the other element or text we mentioned in the list
+
+  // edit the first lang ((2nd approach))
+
+ const firstlang = document.querySelector("li:first-child")
+ firstlang.outerHTML = '<li>C++</li>'
+
+
+ //remove the element
+ const lastlang = document.querySelector("li:last-child") // query selector is used to select the element or any specific line
+  lastlang.remove()  // this is used to remove the element
+</script>
+</html>
