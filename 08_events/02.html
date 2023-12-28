@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javascript Basics</h1>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  const sayHi= function(){
+    console.log('hit');
+  }
+  const changeText = function(){
+    document.querySelector('H1').innerHTML = 'JS basics tuts'
+  }
+
+  // setTimeout(changeText, 5000)
+  // setTimeout(sayHi, 2000)
+
+  const changeMe = setTimeout(changeText, 2000)
+  document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe) // this will stop the function from working and stop its process
+    console.log('Stopped');
+  })
+</script>
+</html>
