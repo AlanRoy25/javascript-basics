@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure</title>
+</head>
+<body>
+ <button id="orange">Orange</button> 
+ <button id="green">green</button> 
+</body>
+<script>
+  function clickhandler(color){// lexical scoping
+
+    return function(){
+      document.body.style.backgroundColor = `${color}`// since this has the scope of the clickhandler function so its able to return the function (closure) 
+    }
+  }
+  document.getElementById('orange').onclick =clickhandler('orange')
+  document.getElementById('green').onclick =clickhandler('green')
+  
+</script>
+</html>
